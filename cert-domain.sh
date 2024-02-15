@@ -9,6 +9,6 @@ certbot delete -n --cert-name $1
 
 certbot certonly --manual \
     --preferred-challenges=dns \
-    --manual-auth-hook /srv/share/bin/cloudns/certbot-auth.sh \
-    --manual-cleanup-hook /srv/share/bin/cloudns/certbot-cleanup.sh \
+    --manual-auth-hook /usr/local/bin/certbot-auth.sh \
+    --manual-cleanup-hook /usr/local/bin/certbot-cleanup.sh \
     -d $1 -d *.$1
