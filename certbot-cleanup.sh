@@ -1,8 +1,8 @@
 #!/bin/bash
 
-token=$(cat /root/.cloudns-token)
-user=$(echo $token | cut -d '|' -f 1)
-pass=$(echo $token | cut -d '|' -f 2)
+auth=$(cat /root/.cloudns-auth)
+user=$(echo $auth | cut -d '|' -f 1)
+pass=$(echo $auth | cut -d '|' -f 2)
 
 domainname=$( echo $CERTBOT_DOMAIN )
 
