@@ -16,8 +16,8 @@ do
   else
     certbot certonly --manual \
       --preferred-challenges=dns \
-      --manual-auth-hook /srv/share/bin/cloudns/certbot-auth.sh \
-      --manual-cleanup-hook /srv/share/bin/cloudns/certbot-cleanup.sh \
+      --manual-auth-hook /usr/local/bin/certbot-auth.sh \
+      --manual-cleanup-hook /usr/local/bin/certbot-cleanup.sh \
       -d $zone -d *.$zone
   fi
 done
