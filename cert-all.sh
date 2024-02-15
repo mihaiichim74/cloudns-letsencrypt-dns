@@ -1,8 +1,8 @@
 #!/bin/bash
 
-token=$(cat /root/.cloudns-token)
-user=$(echo $token | cut -d '|' -f 1)
-pass=$(echo $token | cut -d '|' -f 2)
+auth=$(cat /root/.cloudns-auth)
+user=$(echo $auth | cut -d '|' -f 1)
+pass=$(echo $auth | cut -d '|' -f 2)
 
 url="https://api.cloudns.net/dns/list-zones.json?auth-id=${user}&auth-password=${pass}&page=1&rows-per-page=100"
 zones=$(curl $url | jq -r '.[] | .name' 2>/dev/null)
